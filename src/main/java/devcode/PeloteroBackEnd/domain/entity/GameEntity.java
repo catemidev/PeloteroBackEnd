@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "games")
-public class Game {
+public class GameEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,6 @@ public class Game {
     // Tenemos referencia a otra clase
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    private CustomerEntity customer;
 
 }

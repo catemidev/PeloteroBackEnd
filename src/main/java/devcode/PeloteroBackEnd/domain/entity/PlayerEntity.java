@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "players")
-public class Player {
+public class PlayerEntity {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -20,7 +20,7 @@ public class Player {
     private String nickName;
     private Integer level;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+//    @ManyToOne
+//    @JoinColumn(name = "user_id", nullable = false)
+//    private User user;
 }
