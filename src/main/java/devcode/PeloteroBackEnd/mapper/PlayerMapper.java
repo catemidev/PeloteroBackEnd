@@ -2,18 +2,20 @@ package devcode.PeloteroBackEnd.mapper;
 
 import devcode.PeloteroBackEnd.domain.entity.PlayerEntity;
 import devcode.PeloteroBackEnd.dto.response.PlayerResponseDTO;
-import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 @Component
-@RequiredArgsConstructor
 public class PlayerMapper {
-
-    private final ModelMapper modelMapper;
-
-    public PlayerResponseDTO toResponseDTO(PlayerEntity playerEntity){
-        return modelMapper.map(playerEntity, PlayerResponseDTO.class);
+//    Averiguar en un futuro como activar esta parte
+//    public PlayerMapper() {
+//        throw new UnsupportedOperationException("Esta clase no debe ser instanciada.");
+//    }
+    public static PlayerResponseDTO toResponseDTO(PlayerEntity playerEntity){
+        if(playerEntity == null) return null;
+        return new PlayerResponseDTO(
+                playerEntity.getName(),
+                playerEntity.getNickName(),
+                playerEntity.getLevel()
+                );
     }
-
 }
