@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class TeamMapper {
 
+    public TeamMapper() {
+        throw new UnsupportedOperationException("Esta clase no debe ser instanciada.");
+    }
+
     public static TeamEntity toEntity(TeamEntity team, TeamRequestDTO requestDTO){
 
         if (requestDTO == null) return null;

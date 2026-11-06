@@ -16,9 +16,17 @@ public class PlayerEntity {
 
     @Column(nullable = false)
     private String name;
+
     @Column(name = "nick_name")
     private String nickName;
     private Integer level;
+    private String urlPhoto;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "player_id",
+            nullable = false,
+            foreignKey = @ForeignKey(name = "FK_PLAYER_TEAM"))
+    private TeamEntity team;
 
 //    @ManyToOne
 //    @JoinColumn(name = "user_id", nullable = false)

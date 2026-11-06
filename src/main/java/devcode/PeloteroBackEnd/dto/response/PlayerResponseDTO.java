@@ -1,8 +1,10 @@
 package devcode.PeloteroBackEnd.dto.response;
 
 public record PlayerResponseDTO(
+        Long id,
         String name,
         String nickName,
-        Integer level
+        Integer level,
+        String urlPhoto
 ) {
 }

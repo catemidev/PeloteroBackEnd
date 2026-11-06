@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -21,6 +24,9 @@ public class TeamEntity {
     private String distric;
     private String department;
     private String pais;
+
+    @OneToMany(mappedBy = "team")
+    private List<PlayerEntity> players = new ArrayList<>();
 
 
 }
