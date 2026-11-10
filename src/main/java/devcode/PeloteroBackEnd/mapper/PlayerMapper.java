@@ -1,6 +1,7 @@
 package devcode.PeloteroBackEnd.mapper;
 
 import devcode.PeloteroBackEnd.domain.entity.PlayerEntity;
+import devcode.PeloteroBackEnd.domain.entity.TeamEntity;
 import devcode.PeloteroBackEnd.dto.request.PlayerRequestDTO;
 import devcode.PeloteroBackEnd.dto.response.PlayerResponseDTO;
 import org.springframework.stereotype.Component;
@@ -21,6 +22,12 @@ public class PlayerMapper {
         player.setLevel(requestDTO.level());
         player.setUrlPhoto(requestDTO.urlPhoto());
 
+        if (requestDTO.teamId() != null){
+            TeamEntity team = new TeamEntity();
+            team.setId(requestDTO.teamId());
+            player.setTeam(team);
+        }
+
         return player;
 
     }
@@ -34,7 +41,8 @@ public class PlayerMapper {
                 player.getName(),
                 player.getNickName(),
                 player.getLevel(),
-                player.getUrlPhoto()
+                player.getUrlPhoto(),
+                player.getTeam().getName()
         );
 
     }

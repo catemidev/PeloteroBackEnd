@@ -5,6 +5,7 @@ public record PlayerResponseDTO(
         String name,
         String nickName,
         Integer level,
-        String urlPhoto
+        String urlPhoto,
+        String teamName
 ) {
 }

@@ -23,7 +23,7 @@ public class PlayerEntity {
     private String urlPhoto;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "player_id",
+    @JoinColumn(name = "team_id",
             nullable = false,
             foreignKey = @ForeignKey(name = "FK_PLAYER_TEAM"))
     private TeamEntity team;

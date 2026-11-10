@@ -28,5 +28,12 @@ public class TeamEntity {
     @OneToMany(mappedBy = "team")
     private List<PlayerEntity> players = new ArrayList<>();
 
+    @OneToMany(mappedBy = "team")
+    private List<GameEntity> games = new ArrayList<>();
+
+    public void addPlayer(PlayerEntity player){
+        players.add(player);
+        player.setTeam(this);
+    }
 
 }
